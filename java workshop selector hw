@@ -1,0 +1,108 @@
+public class WorkshopSelector {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        
+        Scanner kb=new Scanner(System.in);
+        
+        
+        
+        System.out.println("Choose from one of the worksjops below: ");
+                System.out.println("For \"Handling Stress\" enter A: ");
+                System.out.println("For \"Time Management\" enter B:  ");
+                System.out.println("For \"Supervision Skills\" enter C: ");
+                System.out.println("For \"Negotiation\" enter D: ");
+                System.out.println("For \"How to Interview\" enter E: ");
+        
+        
+        String workshop;
+        
+        System.out.println("Enter the workshop you want to attend: ");
+        workshop=kb.nextLine().toUpperCase();
+        while (!workshop.equals("A")&&!workshop.equals("B")
+                &&!workshop.equals("A")&&!workshop.equals("D")&&!workshop.equals("E")){
+            System.out.println("Enter A,B,C,D, or E only!!");
+            System.out.println("Enter the workshop you want to attend: ");
+            workshop=kb.nextLine().toUpperCase();   
+        }
+        
+        System.out.println("Choose from one of the locations listed below: ");
+        System.out.println("For \"Austin\"enter A: ");
+        System.out.println("For \"Chicago\"enter B: ");
+        System.out.println("For \"Dallas\"enter C: ");
+        System.out.println("For \"Orlando\"enter D: ");
+        System.out.println("For \"Phoenix\"enter E: ");
+        System.out.println("For \"Raleigh\"enter F: ");
+        
+        String location;
+        System.out.println("Enter the location where you want to attend: ");
+        location=kb.nextLine().toUpperCase();
+        while(!location.equals("A")&&!location.equals("B")
+                &&!location.equals("C")&&!location.equals("D")&&!location.equals("F")){
+            System.out.println("Enter A,B,C,D,E or F ");
+            System.out.println("Enter the location where you want to attend: ");
+            location=kb.nextLine().toUpperCase();
+        }
+                
+       double doublecost=workshopfee(location,workshop);
+        System.out.println("The total cost of the workshop is: "+doublecost);
+        
+        
+        // TODO code application logic here
+    }//end of main method
+    
+    public static double locationfee (String loc){
+        
+        double cost=0
+                
+                if(loc.equals("A")){
+                    cost=95;
+                }else if( loc.equals("B")){
+                    cost=125;
+                 }else if( loc.equals("B")){
+                    cost=125;
+                    }else if( loc.equals("C")){
+                    cost=110;
+                    }else if( loc.equals("D")){
+                    cost=100;
+                    }else if( loc.equals("E")){
+                    cost=92;
+                    }else if( loc.equals("F")){
+                    cost=90;}
+                
+                return cost;
+    
+                }
+    
+    public static double workshopfee (String loc, String wrkshop){
+        
+        double cost=locationfee(loc);
+        double regfee;
+        double locationcost=0;
+        
+        if(wrkshop.equals("A")){
+            regfee=595;
+            locationcost=cost*3;
+        }else if (wrkshop.equals("B")){
+            regfee=695;
+            locationcost=cost*3;
+            }else if (wrkshop.equals("C")){
+            regfee=995;
+            locationcost=cost*3;
+            }else if (wrkshop.equals("D")){
+            regfee=1295;
+            locationcost=cost*5;
+            }else if (wrkshop.equals("E")){
+            regfee=395;
+            locationcost=cost*1;
+            }
+        double total= regfee=locationcost;
+        return total;
+        
+            
+        }
+    
+        
+    }
